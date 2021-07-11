@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body {
+
+            margin: 0px;
+        }
+
+        .containFijo {
+
+            background-image: url("https://d2hk1jn6z746v8.cloudfront.net/wp-content/uploads/2020/02/17111858/centros-grande-1.jpg");
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+
+        }
+
+        .bton {
+            display: flex;
+            flex-direction: column;
+            max-height: 3%;
+            cursor: pointer;
+            position: absolute;
+            right: 3vw;
+            top: 1vw;
+            z-index: 999;
+
+        }
+
+        span {
+            border: 1px solid rgb(114, 250, 227);
+            width: 30px;
+            margin-top: 5px;
+
+        }
+
+        .containInvisible {
+
+            background-color: teal;
+            z-index: 991;
+            visibility: hidden;
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+            position: absolute;
+        }
+
+        .containArriba {
+
+            background-color: violet;
+            z-index: 992;
+            height: 0;
+            width: 100%;
+            transition: all 1.5s;
+            position: absolute;
+
+        }
+
+        .containDerecha {
+
+            background-color: cornflowerblue;
+            z-index: 993;
+            width: 0;
+            height: 100%;
+            transition: all 1.5s;
+           position: absolute;
+          
+        }
+
+        .bton:hover ~.containInvisible {
+            visibility: visible;
+            opacity: 1;
+
+
+        }
+
+        .bton:hover ~ .containArriba {
+            height: 50%;
+        }
+
+        .bton:hover ~ .containDerecha {
+            width: 50%;
+
+        }
+    </style>
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="containFijo">
+
+            <div class="bton">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="containDerecha"></div>
+            <div class="containArriba"></div>
+            <div class="containInvisible"></div>
+            
+
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
