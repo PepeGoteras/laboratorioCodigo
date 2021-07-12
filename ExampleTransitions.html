@@ -72,22 +72,44 @@
             width: 0;
             height: 100%;
             transition: all 1.5s;
-           position: absolute;
-          
+            position: absolute;
+
         }
 
-        .bton:hover ~.containInvisible {
+        .bton:hover{
+           
+        }
+        .bton:hover span:nth-child(1) {
+
+            border: transparent;
+        }
+
+        .bton:hover span:nth-child(2) {
+           
+            transform: rotate(138deg) ;
+            transition-duration: 0.5s;
+
+        }
+
+        .bton:hover span:nth-child(3) {
+            margin-top: -2px;
+            transform: rotate(40deg) ;
+            transition-duration: 0.5s;
+
+        }
+
+        .bton:hover~.containInvisible {
             visibility: visible;
             opacity: 1;
 
 
         }
 
-        .bton:hover ~ .containArriba {
+        .bton:hover~.containArriba {
             height: 50%;
         }
 
-        .bton:hover ~ .containDerecha {
+        .bton:hover~.containDerecha {
             width: 50%;
 
         }
@@ -115,7 +137,7 @@
             <div class="containDerecha"></div>
             <div class="containArriba"></div>
             <div class="containInvisible"></div>
-            
+
 
         </div>
 
