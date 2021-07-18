@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .fondo {
+            position: relative;
+            width: 100%;
+
+
+        }
+
+        .bton {
+
+            width: 30px;
+            height: 30px;
+            right: 29px;
+            top: 20px;
+            position: absolute;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        span {
+
+            border: 2px solid springgreen;
+            margin-top: 5px;
+        }
+
+        .containArriba {
+            background-color: violet;
+            height: 50vh;
+            width: 50%;
+            display: none;
+            position: absolute;
+            z-index: 99;
+        }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+
+            //Añadir un clase en el boton. trabajar con ella y al cerrar eliminarla con efecto
+
+            var pulsar = 0;
+            $(".bton").click(function () {
+
+
+                if (pulsar == 0) {
+
+                    console.log("dentro");
+                    $(".bton").addClass("abierto");
+
+                    $('.containArriba').show(1000);
+                    // $('.containArriba').slideToggle(1000);
+                    $('.abierto').css({
+                        'top': '30px',
+                        'transition-duration': '0.5s',
+                    });
+
+                    $('.abierto span').css({
+                        'margin-top': '0',
+                        'transition-duration': '0.5s',
+                    });
+
+                    $('.abierto span:nth-child(1)').css({
+                        'transform': 'rotate(-40deg)',
+                        'transition-duration': '0.5s',
+                    });
+
+
+                    $('.abierto span:nth-child(2)').css('display', 'none');
+
+                    $('.abierto span:nth-child(3)').css({
+                        'transform': 'rotate(40deg)',
+                        'transition-duration': '0.5s',
+                        'margin-top': '-3px'
+                    });
+
+                    pulsar++;
+                } else {
+
+                    console.log("pepapig");
+                    $('.containArriba').hide(3000);
+                   // $('.abierto').removeAttr("style");
+                    //$('.abierto span').removeAttr("style");
+
+                    
+
+                    $('.abierto').css({
+                        'top': '',
+                        'transition-duration': '0.5s',
+                    });
+
+                    $('.abierto span').css({
+                        'margin-top': '',
+                        'transition-duration': '0.5s',
+                    });
+
+                    $('.abierto span:nth-child(1)').css({
+                        'transform': '',
+                        'transition-duration': '0.5s',
+                    });
+
+
+                    $('.abierto span:nth-child(2)').css('display', 'block');
+
+                    $('.abierto span:nth-child(3)').css({
+                        'transform': '',
+                        'transition-duration': '0.5s',
+                        'margin-top': ''
+                    });
+                   
+                    pulsar = 0;
+
+                }
+
+               
+
+            });
+
+
+
+        });
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="containArriba"></div>
+    <img class="fondo"
+        src="https://d2hk1jn6z746v8.cloudfront.net/wp-content/uploads/2020/02/17111858/centros-grande-1.jpg" alt="">
+    <div class="bton">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+
+</body>
+
+</html>
